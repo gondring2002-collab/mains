@@ -312,7 +312,7 @@ void loop()
 
         float totalBerat = berat1 + berat2;
 
-        data.nodeID = 3;
+        data.nodeID = 1;
         data.packetID = packet_counter++;
         data.rotationID = 0;
 
