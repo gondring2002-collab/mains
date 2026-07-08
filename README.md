@@ -24,4 +24,4 @@ ESP32+HX711 :ESP32_BBESPNTOWSENDER3_0_RECIEVE1.ino
 
 
 
-bisa kalibrasi serial di CYD untuk 
+bisa kalibrasi serial di CYD untuk nilai bb dan tb
