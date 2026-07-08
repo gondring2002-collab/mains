@@ -1,6 +1,6 @@
 update untuk 2 hx711 per 08072026
 
-
+https://github.com/gondring2002-collab/mains/blob/main/ESP32_BBESPNTOWSENDER3_0_RECIEVE1_2HX771.ino
 
 update 03 07 2026
 
