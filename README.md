@@ -1,3 +1,7 @@
+update untuk 2 hx711 per 08072026
+
+
+
 update 03 07 2026
 
 CYD : ESP32CYD_AP_ESPNOWReciever_2_3_SEND1_1.ino
