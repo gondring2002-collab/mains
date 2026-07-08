@@ -10,9 +10,7 @@ https://github.com/gondring2002-collab/mains/blob/main/logoLPDP.h
 
 https://github.com/gondring2002-collab/mains/blob/main/logoBRIN.h
 
-
-
-
+https://github.com/gondring2002-collab/mains/blob/main/cyd_logo_converter.py
 
 update 03 07 2026
 
