@@ -4,6 +4,10 @@ https://github.com/gondring2002-collab/mains/blob/main/ESP32_BBESPNTOWSENDER3_0_
 
 untuk tampilan baru tanpa fungsi AP,espNOW
 
+https://github.com/gondring2002-collab/mains/blob/main/ESP32_CYD_TouchTFT_eSPI_2_2.ino
+
+
+
 update 03 07 2026
 
 CYD : ESP32CYD_AP_ESPNOWReciever_2_3_SEND1_1.ino
