@@ -6,6 +6,12 @@ untuk tampilan baru tanpa fungsi AP,espNOW
 
 https://github.com/gondring2002-collab/mains/blob/main/ESP32_CYD_TouchTFT_eSPI_2_2.ino
 
+https://github.com/gondring2002-collab/mains/blob/main/logoLPDP.h
+
+https://github.com/gondring2002-collab/mains/blob/main/logoBRIN.h
+
+
+
 
 
 update 03 07 2026
