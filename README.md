@@ -2,6 +2,8 @@ update untuk 2 hx711 per 08072026
 
 https://github.com/gondring2002-collab/mains/blob/main/ESP32_BBESPNTOWSENDER3_0_RECIEVE1_2HX771.ino
 
+untuk tampilan baru tanpa fungsi AP,espNOW
+
 update 03 07 2026
 
 CYD : ESP32CYD_AP_ESPNOWReciever_2_3_SEND1_1.ino
