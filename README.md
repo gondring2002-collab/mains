@@ -1,3 +1,9 @@
+update tampilan per 09072026
+
+ESP32_CYD_TouchTFT_eSPI_3_1.ino
+
+https://github.com/gondring2002-collab/mains/blob/main/ESP32_CYD_TouchTFT_eSPI_3_1.ino
+
 update untuk 2 hx711 per 08072026
 
 https://github.com/gondring2002-collab/mains/blob/main/ESP32_BBESPNTOWSENDER3_0_RECIEVE1_2HX771.ino
