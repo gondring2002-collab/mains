@@ -1,3 +1,18 @@
+update PER 24072026
+
+https://github.com/gondring2002-collab/mains/blob/main/ESP32_CYD_TouchTFT_eSPI_3_1_Bluetooth2.ino
+
+VLX
+https://github.com/gondring2002-collab/mains/blob/main/ESP32_BBESPNTOWSENDER4_RECIEVE1_1.ino
+
+HX711 2x
+https://github.com/gondring2002-collab/mains/blob/main/ESP32_HX711_dualHX711_ESPNOW_1.ino
+
+HX711 
+https://github.com/gondring2002-collab/mains/blob/main/ESP32_BBESPNTOWSENDER3_0_RECIEVE1_2.ino
+
+-----------------------------------------------------------------------
+
 update tampilan per 09072026
 
 ESP32_CYD_TouchTFT_eSPI_3_1.ino
