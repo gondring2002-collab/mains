@@ -289,20 +289,94 @@ if (incomingData.nodeID == 184)
 
 if (incomingData.nodeID == 185)
 {
-    Serial.print("Nilai HX711A_A diterima : ");
+    Serial.print("Nilai HX711_A diterima : ");
     Serial.println(incomingData.value, 6);
 }
 if (incomingData.nodeID == 186)
 {
-    Serial.print("Nilai HX711A_B diterima : ");
+    Serial.print("Nilai HX711_B diterima : ");
     Serial.println(incomingData.value, 6);
 }
 if (incomingData.nodeID == 187)
 {
-    Serial.print("Nilai HX711A_C diterima : ");
+    Serial.print("Nilai HX711_C diterima : ");
+    Serial.println(incomingData.value, 6);
+}
+//====================================================
+// HX711A = HX711 #1
+//====================================================
+
+//================== NILAI A_1 ==================
+
+if (incomingData.nodeID == 155)
+{
+    Serial.print("Nilai A_1 HX711A diterima : ");
     Serial.println(incomingData.value, 6);
 }
 
+//================== NILAI B_1 ==================
+
+if (incomingData.nodeID == 156)
+{
+    Serial.print("Nilai B_1 HX711A diterima : ");
+    Serial.println(incomingData.value, 6);
+}
+
+//================== NILAI C_1 ==================
+
+if (incomingData.nodeID == 157)
+{
+    Serial.print("Nilai C_1 HX711A diterima : ");
+    Serial.println(incomingData.value, 6);
+}
+
+
+//====================================================
+// HX711B = HX711 #2
+//====================================================
+
+//================== NILAI A_2 ==================
+
+if (incomingData.nodeID == 165)
+{
+    Serial.print("Nilai A_2 HX711B diterima : ");
+    Serial.println(incomingData.value, 6);
+}
+
+//================== NILAI B_2 ==================
+
+if (incomingData.nodeID == 166)
+{
+    Serial.print("Nilai B_2 HX711B diterima : ");
+    Serial.println(incomingData.value, 6);
+}
+
+//================== NILAI C_2 ==================
+
+if (incomingData.nodeID == 167)
+{
+    Serial.print("Nilai C_2 HX711B diterima : ");
+    Serial.println(incomingData.value, 6);
+}
+
+//====================================================
+// TARE HX711A = HX711 #1
+//====================================================
+
+if (incomingData.nodeID == 154)
+{
+    Serial.println("TARE HX711A SELESAI");
+}
+
+
+//====================================================
+// TARE HX711B = HX711 #2
+//====================================================
+
+if (incomingData.nodeID == 164)
+{
+    Serial.println("TARE HX711B SELESAI");
+}
 
 }
 //====================================================
@@ -1208,7 +1282,7 @@ if (cmd.startsWith("VL53B="))
 
 //================== HX711A_A ==================
 
-if (cmd.startsWith("HX711A_A="))
+if (cmd.startsWith("HX711_A="))
 {
     String nilai = cmd.substring(9);
 
@@ -1267,7 +1341,7 @@ if (cmd.startsWith("HX711A_A="))
 //================== HX711 B ==================
 
 
-if (cmd.startsWith("HX711A_B="))
+if (cmd.startsWith("HX711_B="))
 {
     String nilai = cmd.substring(9);
 
@@ -1325,7 +1399,7 @@ if (cmd.startsWith("HX711A_B="))
 
 //================== HX711A_A ==================
 
-if (cmd.startsWith("HX711A_C="))
+if (cmd.startsWith("HX711_C="))
 {
     String nilai = cmd.substring(9);
 
@@ -1383,7 +1457,7 @@ if (cmd.startsWith("HX711A_C="))
 
 //================== TARE HX711 ==================
 
-else if (cmd.startsWith("HX711A_T="))
+else if (cmd.startsWith("HX711_T="))
 {
     sendData.nodeID = 84;
     sendData.packetID = 0;
@@ -1403,6 +1477,323 @@ else if (cmd.startsWith("HX711A_T="))
     else
         Serial.println("Kirim TARE GAGAL");
 }
+//====================================================
+// HX711A = HX711 #1
+//====================================================
+
+//================== HX711A_A ==================
+
+if (cmd.startsWith("HX711A_A="))
+{
+    String nilai = cmd.substring(9);
+
+    // MINTA NILAI A1
+    if (nilai == "?")
+    {
+        sendData.nodeID = 55;
+        sendData.packetID = 0;
+        sendData.value = 0;
+        sendData.rotationID = 0;
+
+        esp_now_send(
+            macHX711,
+            (uint8_t *)&sendData,
+            sizeof(sendData)
+        );
+
+        Serial.println("Minta A_1");
+    }
+
+    // SIMPAN NILAI A1
+    else
+    {
+        float kal = nilai.toFloat();
+
+        sendData.nodeID = 58;
+        sendData.packetID = 0;
+        sendData.value = kal;
+        sendData.rotationID = 0;
+
+        esp_now_send(
+            macHX711,
+            (uint8_t *)&sendData,
+            sizeof(sendData)
+        );
+
+        Serial.print("Kirim A_1 : ");
+        Serial.println(kal, 6);
+    }
+}
+
+
+//================== HX711A_B ==================
+
+else if (cmd.startsWith("HX711A_B="))
+{
+    String nilai = cmd.substring(9);
+
+    // MINTA NILAI B1
+    if (nilai == "?")
+    {
+        sendData.nodeID = 56;
+        sendData.packetID = 0;
+        sendData.value = 0;
+        sendData.rotationID = 0;
+
+        esp_now_send(
+            macHX711,
+            (uint8_t *)&sendData,
+            sizeof(sendData)
+        );
+
+        Serial.println("Minta B_1");
+    }
+
+    // SIMPAN NILAI B1
+    else
+    {
+        float kal = nilai.toFloat();
+
+        sendData.nodeID = 59;
+        sendData.packetID = 0;
+        sendData.value = kal;
+        sendData.rotationID = 0;
+
+        esp_now_send(
+            macHX711,
+            (uint8_t *)&sendData,
+            sizeof(sendData)
+        );
+
+        Serial.print("Kirim B_1 : ");
+        Serial.println(kal, 6);
+    }
+}
+
+
+//================== HX711A_C ==================
+
+else if (cmd.startsWith("HX711A_C="))
+{
+    String nilai = cmd.substring(9);
+
+    // MINTA NILAI C1
+    if (nilai == "?")
+    {
+        sendData.nodeID = 57;
+        sendData.packetID = 0;
+        sendData.value = 0;
+        sendData.rotationID = 0;
+
+        esp_now_send(
+            macHX711,
+            (uint8_t *)&sendData,
+            sizeof(sendData)
+        );
+
+        Serial.println("Minta C_1");
+    }
+
+    // SIMPAN NILAI C1
+    else
+    {
+        float kal = nilai.toFloat();
+
+        sendData.nodeID = 60;
+        sendData.packetID = 0;
+        sendData.value = kal;
+        sendData.rotationID = 0;
+
+        esp_now_send(
+            macHX711,
+            (uint8_t *)&sendData,
+            sizeof(sendData)
+        );
+
+        Serial.print("Kirim C_1 : ");
+        Serial.println(kal, 6);
+    }
+}
+
+
+//================== TARE HX711 #1 ==================
+
+else if (cmd.startsWith("HX711A_T="))
+{
+    sendData.nodeID = 54;
+    sendData.packetID = 0;
+    sendData.value = 0;
+    sendData.rotationID = 0;
+
+    esp_now_send(
+        macHX711,
+        (uint8_t *)&sendData,
+        sizeof(sendData)
+    );
+
+    Serial.println("Kirim TARE HX711 #1");
+}
+
+
+//====================================================
+// HX711B = HX711 #2
+//====================================================
+
+//================== HX711B_A ==================
+
+else if (cmd.startsWith("HX711B_A="))
+{
+    String nilai = cmd.substring(9);
+
+    // MINTA NILAI A2
+    if (nilai == "?")
+    {
+        sendData.nodeID = 65;
+        sendData.packetID = 0;
+        sendData.value = 0;
+        sendData.rotationID = 0;
+
+        esp_now_send(
+            macHX711,
+            (uint8_t *)&sendData,
+            sizeof(sendData)
+        );
+
+        Serial.println("Minta A_2");
+    }
+
+    // SIMPAN NILAI A2
+    else
+    {
+        float kal = nilai.toFloat();
+
+        sendData.nodeID = 68;
+        sendData.packetID = 0;
+        sendData.value = kal;
+        sendData.rotationID = 0;
+
+        esp_now_send(
+            macHX711,
+            (uint8_t *)&sendData,
+            sizeof(sendData)
+        );
+
+        Serial.print("Kirim A_2 : ");
+        Serial.println(kal, 6);
+    }
+}
+
+
+//================== HX711B_B ==================
+
+else if (cmd.startsWith("HX711B_B="))
+{
+    String nilai = cmd.substring(9);
+
+    // MINTA NILAI B2
+    if (nilai == "?")
+    {
+        sendData.nodeID = 66;
+        sendData.packetID = 0;
+        sendData.value = 0;
+        sendData.rotationID = 0;
+
+        esp_now_send(
+            macHX711,
+            (uint8_t *)&sendData,
+            sizeof(sendData)
+        );
+
+        Serial.println("Minta B_2");
+    }
+
+    // SIMPAN NILAI B2
+    else
+    {
+        float kal = nilai.toFloat();
+
+        sendData.nodeID = 69;
+        sendData.packetID = 0;
+        sendData.value = kal;
+        sendData.rotationID = 0;
+
+        esp_now_send(
+            macHX711,
+            (uint8_t *)&sendData,
+            sizeof(sendData)
+        );
+
+        Serial.print("Kirim B_2 : ");
+        Serial.println(kal, 6);
+    }
+}
+
+
+//================== HX711B_C ==================
+
+else if (cmd.startsWith("HX711B_C="))
+{
+    String nilai = cmd.substring(9);
+
+    // MINTA NILAI C2
+    if (nilai == "?")
+    {
+        sendData.nodeID = 67;
+        sendData.packetID = 0;
+        sendData.value = 0;
+        sendData.rotationID = 0;
+
+        esp_now_send(
+            macHX711,
+            (uint8_t *)&sendData,
+            sizeof(sendData)
+        );
+
+        Serial.println("Minta C_2");
+    }
+
+    // SIMPAN NILAI C2
+    else
+    {
+        float kal = nilai.toFloat();
+
+        sendData.nodeID = 70;
+        sendData.packetID = 0;
+        sendData.value = kal;
+        sendData.rotationID = 0;
+
+        esp_now_send(
+            macHX711,
+            (uint8_t *)&sendData,
+            sizeof(sendData)
+        );
+
+        Serial.print("Kirim C_2 : ");
+        Serial.println(kal, 6);
+    }
+}
+
+
+//================== TARE HX711 #2 ==================
+
+else if (cmd.startsWith("HX711B_T="))
+{
+    sendData.nodeID = 64;
+    sendData.packetID = 0;
+    sendData.value = 0;
+    sendData.rotationID = 0;
+
+    esp_now_send(
+        macHX711,
+        (uint8_t *)&sendData,
+        sizeof(sendData)
+    );
+
+    Serial.println("Kirim TARE HX711 #2");
+}
+
+
+
 
 }
     float currentHeight = beratBadan;
