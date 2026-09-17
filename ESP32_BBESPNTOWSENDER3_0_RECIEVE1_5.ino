@@ -10,8 +10,8 @@
 // ============================================================
 // HX711 CONFIG
 // ============================================================
-#define HX711_DOUT 13
-#define HX711_SCK  12
+#define HX711_DOUT 13//27
+#define HX711_SCK  12//26
 
 HX711 scale;
 
@@ -24,7 +24,7 @@ HX711 scale;
 // B = Offset
 // ============================================================
 
-float kalC = 20734.434;
+float kalC =  -2721.700;//20734.434;
 float kalA = 1.0;
 float kalB = 0.0;
 
@@ -90,7 +90,7 @@ const int ledPin = 2;
 // SEND INTERVAL
 // ============================================================
 
-uint32_t sendInterval = 700;
+uint32_t sendInterval = 1000;
 uint32_t lastSend = 0;
 
 
@@ -668,7 +668,7 @@ void setup()
         Serial.println("TARE BARU DIAMBIL");
     }
 
-
+    rawT = scale.read();
     raw_sebelumnya = rawT;
 
 
@@ -838,7 +838,7 @@ void loop()
 
         float perubahanKg = 0;
 
-        if (kalC != 0)
+     if (kalC != 0)
         {
             perubahanKg =
                 (float)perubahanRaw / kalC;
@@ -859,25 +859,25 @@ void loop()
         Serial.print(" | Perubahan RAW: ");
         Serial.print(perubahanRaw);
 
-        Serial.print(" | NET RAW: ");
-        Serial.print(netRaw);
+       // Serial.print(" | NET RAW: ");
+      //  Serial.print(netRaw);
 
         Serial.print(" | Massa: ");
         Serial.print(kg, 2);
         Serial.print(" kg");
 
-        Serial.print(" | Perubahan Massa: ");
-        Serial.print(perubahanKg, 2);
-        Serial.print(" kg");
+       // Serial.print(" | Perubahan Massa: ");
+       // Serial.print(perubahanKg, 2);
+        //Serial.print(" kg");
 
         Serial.print(" | TARE: ");
         Serial.print(rawT);
 
-        Serial.print(" | A: ");
-        Serial.print(kalA, 6);
+       // Serial.print(" | A: ");
+       // Serial.print(kalA, 6);
 
-        Serial.print(" | B: ");
-        Serial.print(kalB, 6);
+       // Serial.print(" | B: ");
+       // Serial.print(kalB, 6);
 
         Serial.print(" | C: ");
         Serial.println(kalC, 3);
@@ -887,7 +887,7 @@ void loop()
         // ISI PACKET
         // ====================================================
 
-        data.nodeID = 2;
+        data.nodeID = 3;
 
         data.packetID =
             packet_counter++;
