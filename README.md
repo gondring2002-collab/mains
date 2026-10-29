@@ -1,3 +1,12 @@
+Update 29 oktober 2026
+
+https://github.com/gondring2002-collab/mains/blob/main/HX711_ESP_NOW_GPIO32_INPUT_ON_OFF_full.ino
+
+CF manual 20816.220703 perintah serial g=20816.220703
+perintah serial ibu anak d
+atau di pim 32 low
+
+
 Update 11 september 2026
 
 https://github.com/gondring2002-collab/mains/blob/main/ESP32_BBESPNTOWSENDER3_0_RECIEVE1_5.ino
