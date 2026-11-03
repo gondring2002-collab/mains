@@ -1,3 +1,18 @@
+update
+MACADDRESS MAINS 1
+CYD 1
+VLX 1  {0xC0, 0x5D, 0x89, 0xB0, 0x36, 0x18}
+HX711 1
+HX711 2
+
+update
+MACADDRESS MAINS 1
+CYD 1
+VLX 1
+HX711 1
+HX711 2
+
+
 Update 29 oktober 2026
 
 https://github.com/gondring2002-collab/mains/blob/main/HX711_ESP_NOW_GPIO32_INPUT_ON_OFF_full.ino
